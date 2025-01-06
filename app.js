@@ -2,9 +2,12 @@
 let nMax = 0;
 let nMin = 0;
 
-let titulo = document.querySelector('h1');
-titulo.innerHTML = 'NumberSecret-Game';
+function atribuirValorCampo(tag, texto){
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto;
+}
 
-let paragrafo = document.querySelector('p');
-paragrafo.innerHTML = `Escolha um número entre ${nMin} e ${nMax}`;
+atribuirValorCampo('h1', 'NumberSecret-Game');
+atribuirValorCampo('p', `Escolha um número entre ${nMin} e ${nMax}`);
+
 
