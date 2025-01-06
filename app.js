@@ -29,6 +29,7 @@ function verificarChute() {
 function atribuirValorCampo(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
 function gerarNumeroAleatorio() {
@@ -38,7 +39,7 @@ function gerarNumeroAleatorio() {
     if(quantidadeDeElementosLista == nMax){
         numerosSorteados = [];
     }
-    
+
     if(numerosSorteados.includes(numeroEscolhido)){
         return gerarNumeroAleatorio();
     } else {
