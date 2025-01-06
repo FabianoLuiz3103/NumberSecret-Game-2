@@ -1,5 +1,6 @@
 let nMax = 30;
 let nMin = 1;
+let numerosSorteados = [];
 
 startPartida();
 
@@ -31,7 +32,20 @@ function atribuirValorCampo(tag, texto) {
 }
 
 function gerarNumeroAleatorio() {
-    return Math.floor(Math.random() * (nMax - nMin + 1)) + nMin;
+    let numeroEscolhido = Math.floor(Math.random() * (nMax - nMin + 1)) + nMin;
+    let quantidadeDeElementosLista = numerosSorteados.length;
+
+    if(quantidadeDeElementosLista == nMax){
+        numerosSorteados = [];
+    }
+    
+    if(numerosSorteados.includes(numeroEscolhido)){
+        return gerarNumeroAleatorio();
+    } else {
+        numerosSorteados.push(numeroEscolhido);
+        console.log(numerosSorteados);
+        return numeroEscolhido;
+    }
 }
 
 function limparCampo(){
